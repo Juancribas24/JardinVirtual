@@ -1,19 +1,31 @@
+import sys
 import matplotlib.pylab as plt
 from API import transfer_style
 
+if __name__ == "__main__":
+    # Verificar si se pasa al menos un argumento para la imagen de contenido
+    if len(sys.argv) < 2:
+        print("Uso: python Main.py <content_image_path>")
+        sys.exit(1)
 
-if __name__=="__main__":
+    # Leer la imagen de contenido desde los argumentos
+    content_image_path = sys.argv[1]
 
-    # Path of the pre-trained TF model 
+    # Rutas predeterminadas para estilo y salida
+    style_image_path = r"C:\Users\juanc\Downloads\archive\Flowers299\Abutilon\0c32f4ce6e.jpg"
+    output_image_path = r"C:\Users\juanc\Downloads\Neural-Style-Transfer-main\stylized_image.jpeg"
+
+    # Ruta del modelo preentrenado
     model_path = r"C:\Users\juanc\Downloads\Neural-Style-Transfer-main\Neural-Style-Transfer-main\model"
 
-    # NOTE : Works only for '.jpg' and '.png' extensions,other formats may give error
-    content_image_path = r"C:\Users\juanc\Downloads\archive\Flowers299\AfricanDaisy\00ee32228b.jpg"
-    style_image_path = r"C:\Users\juanc\Downloads\archive\Flowers299\Abutilon\0c32f4ce6e.jpg"
+    print(f"Procesando transferencia de estilo con los siguientes parámetros:")
+    print(f" - Imagen de contenido: {content_image_path}")
+    print(f" - Imagen de estilo: {style_image_path} (predeterminada)")
+    print(f" - Imagen de salida: {output_image_path} (predeterminada)")
 
-    img = transfer_style(content_image_path,style_image_path,model_path)
-    # Saving the generated image
-    plt.imsave('stylized_image.jpeg',img)
-    plt.imshow(img)
-    plt.show()
+    # Aplicar transferencia de estilo
+    img = transfer_style(content_image_path, style_image_path, model_path)
 
+    # Guardar la imagen generada
+    plt.imsave(output_image_path, img)
+    print(f"Imagen estilizada guardada en: {output_image_path}")
