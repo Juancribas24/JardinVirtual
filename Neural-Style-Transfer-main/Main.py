@@ -12,11 +12,11 @@ if __name__ == "__main__":
     content_image_path = sys.argv[1]
 
     # Rutas predeterminadas para estilo y salida
-    style_image_path = r"C:\Users\juanc\Downloads\archive\Flowers299\Abutilon\0c32f4ce6e.jpg"
-    output_image_path = r"C:\Users\juanc\Downloads\Neural-Style-Transfer-main\stylized_image.jpeg"
+    style_image_path = r""
+    output_image_path = r""
 
     # Ruta del modelo preentrenado
-    model_path = r"C:\Users\juanc\Downloads\Neural-Style-Transfer-main\Neural-Style-Transfer-main\model"
+    model_path = r"C:\Users\juanc\Documents\GitHub\JardinVirtual\Neural-Style-Transfer-main\model"
 
     print(f"Procesando transferencia de estilo con los siguientes parámetros:")
     print(f" - Imagen de contenido: {content_image_path}")

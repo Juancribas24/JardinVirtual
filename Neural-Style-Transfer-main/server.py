@@ -11,7 +11,7 @@ UPLOAD_FOLDER = 'uploaded_images'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-MODEL_PATH = r"C:\Users\juanc\Downloads\Neural-Style-Transfer-main\Neural-Style-Transfer-main\model"
+MODEL_PATH = r"C:\Users\juanc\Documents\GitHub\JardinVirtual\Neural-Style-Transfer-main\model"
 
 @app.route('/stylize-image', methods=['POST'])
 def stylize_image():
